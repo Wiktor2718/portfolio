@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matrix Flow - A GPU-accelerated machine learning library written in Rust and CUDA">
+    <title>Matrix Flow</title>
+
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #0a9396;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            text-align: center;
+            margin-top: 15px;
+        }
+        nav a {
+            color: #0a9396;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #005f73;
+        }
+        section {
+            margin: 40px 0;
+        }
+        h2 {
+            color: #005f73;
+            border-bottom: 2px solid #005f73;
+            padding-bottom: 5px;
+        }
+        .code-block {
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        footer {
+            text-align: center;
+            color: #555;
+            padding: 20px 0;
+            background-color: #0a9396;
+            color: #fff;
+        }
+        footer a {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Matrix Flow</h1>
+            <p>A GPU-accelerated Machine Learning Library in Rust and CUDA</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#features">Features</a>
+        <a href="#prerequisites">Prerequisites</a>
+        <a href="#usage">Example Usage</a>
+        <a href="#functions">Important Functions</a>
+    </nav>
+
+    <main class="container">
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>Matrix Flow is a machine learning library designed to leverage the power of GPU acceleration using Rust and CUDA. Built as a personal project to deepen understanding of neural networks, this library provides flexible tools for matrix manipulation, optimized multi-layer perceptron (MLP) creation, and performance profiling.</p>
+        </section>
+
+        <section id="features">
+            <h2>Features</h2>
+            <ul>
+                <li><strong>GPU-accelerated computation</strong> using CUDA</li>
+                <li><strong>Multi-layer perceptron (MLP)</strong> with customizable layers and activation functions</li>
+                <li><strong>Adam optimizer</strong> for efficient gradient-based learning</li>
+                <li>Supports <strong>batch training</strong> for improved efficiency</li>
+                <li><strong>NVTX benchmarking</strong> for performance profiling</li>
+            </ul>
+        </section>
+
+        <section id="prerequisites">
+            <h2>Prerequisites</h2>
+            <h3>Install Rust</h3>
+            <p>Download Rust from the <a href="https://www.rust-lang.org/" target="_blank">official Rust website</a>.</p>
+            <h3>Install CUDA Toolkit</h3>
+            <p>Ensure that CUDA is installed on your system. The library defaults to Linux paths; adjust for your setup as needed.</p>
+            <h3>Install Sample Data Sets</h3>
+            <p>Matrix Flow expects datasets in CSV format for training and testing. Make sure to prepare or download labeled CSV data sets.</p>
+        </section>
+
+        <section id="usage">
+            <h2>Example Usage</h2>
+            <p>To use Matrix Flow for a multi-layer perceptron (MLP) model:</p>
+            <div class="code-block">
+                <pre><code class="language-rust">use matrix_flow::prelude::*;
+
+fn read_labeled_data<P: AsRef<Path>>(path: P, output_size: usize, batch_size: usize, max_value: ValueType) -> Result<(Vec<Matrix>, Vec<Matrix>), Box<dyn Error>> {
+    // Load Batches to Matrices (items, labels)
+}
+
+
+fn main() {
+    // Parameters
+    const EPOCHS: u32 = 100;
+    const BATCH_SIZE: usize = 128;
+
+    let layers = [
+        Layer::new(28*28, 100, ActivationType::Tanh),
+        Layer::new(100, 100, ActivationType::Tanh),
+        Layer::new(100, 10, ActivationType::Linear),
+    ];
+
+    let (input_data, output_data) = read_labeled_data(
+        "data_sets/mnist_train.csv", // Path to Your Data Set
+        10,
+        BATCH_SIZE,
+        255.0
+    ).expect("Unable to read data");
+
+    let optim = Optimizer::adam(layers, 0.9, 0.999, 1e-8);
+    let network = MLP::new(BATCH_SIZE, 0.001, optim, layers);
+
+    for e in 0..EPOCHS {
+        let mut error = 0.;
+        for (x, y) in zip(&input_data, &output_data) {
+            let output = network.forward(x);
+
+            error += mse(y, &output);
+            let gradient = mse_prime(y, &output);
+
+            let _ = network.backward(&gradient);
+        }
+        println!("{e}: {}", error / input_data.len() as f32);
+    }
+
+}</code></pre>
+            </div>
+        </section>
+
+        <section id="functions">
+            <h2>Important Functions</h2>
+            <ul>
+                <li><code>MLP::new(batch_size, learning_rate, optimizer, layers)</code> - Initializes an MLP with GPU-optimized memory handling.</li>
+                <li><code>Optimizer::adam(layers, beta1, beta2, epsilon)</code> - Creates an Adam optimizer for the model.</li>
+                <li><code>forward(batch)</code> - Executes a forward pass for prediction.</li>
+                <li><code>backward(gradient)</code> - Computes gradient updates using backpropagation.</li>
+                <li><code>range_push(label)</code> and <code>range_pop()</code> - Used for NVTX profiling.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Matrix Flow. Licensed under the <a href="#">MIT License</a>.</p>
+        </div>
+    </footer>
+
+    <!-- Prism.js and Rust language syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-rust.min.js"></script>
+
+</body>
+</html>

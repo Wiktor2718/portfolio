@@ -1,0 +1,424 @@
+:root {
+	--main-color: #ff004f;
+	--faded-color: #b54769;
+	--transition-duration: 0.5s;
+}
+
+/* CUDA Colors
+:root {
+	--main-color: #00C5CD;
+	--faded-color: #008080;
+	--transition-duration: 0.5s;
+}
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', 'sans-serif';
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: #080808;
+	color: white;
+}
+
+/*-- Header Section --*/
+header {
+	width: 100%;
+	height: 100vh;
+	background-image: url(../images/background.png);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+.container {
+	padding: 10px 10%;
+}
+
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.logo {
+	width: 250px;
+}
+
+nav ul li {
+	display: inline-block;
+	list-style: none;
+	margin: 10px 20px;
+}
+
+
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+	position: relative;
+}
+
+nav ul li a::after {
+	content: '';
+	width: 0;
+	height: 3px;
+	background: var(--main-color);
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	transition: var(--transition-duration);
+}
+
+nav ul li a:hover::after {
+	width: 100%;
+}
+
+.header-text{
+	margin-top: 20%;
+	font-size: 30px;
+}
+
+.header-text h1 {
+	font-size: 60px;
+	margin-top: 20px;
+}
+
+.header-text h1 span{
+	color: var(--main-color);
+}
+
+/*-- About Section --*/
+#about {
+	padding: 80px 0;
+	color: #ababab;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.about-col-1 {
+	flex-basis: 35%;
+}
+
+.about-col-1 img {
+	width: 75%;
+	border-radius: 15px;
+}
+
+.about-col-2 {
+	flex-basis: 60%;
+}
+
+.sub-title {
+	font-size: 60px;
+	font-weight: 600;
+	color: white;
+}
+
+.tab-titles {
+	display: flex;
+	margin: 20px 0 40px;
+}
+
+.tab-links {
+	margin-right: 50px;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+	position: relative;
+}
+
+.tab-links::after {
+	content: '';
+	width: 0;
+	height: 3px;
+	background: var(--main-color);
+	position: absolute;
+	left: 0;
+	bottom: -8px;
+	transition: var(--transition-duration);
+}
+
+.tab-links.active-link::after {
+	width: 50%;
+}
+
+.tab-contents ul li{
+	list-style: none;
+	margin: 10px 0;
+}
+
+.tab-contents ul li span {
+	color: var(--faded-color);
+	font-size: 14px;
+}
+
+.tab-contents{
+	display: none;
+}
+
+.tab-contents.active-tab {
+	display: block;
+}
+
+/*-- Portfolio Section --*/
+#portfolio {
+	padding: 50px 0;
+}
+
+.work-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 40px;
+	margin-top: 50px;
+}
+
+.work {
+	border-radius: 10px;
+	position: relative;
+	overflow: hidden;
+}
+
+.work img {
+	width: 100%;
+	border-radius: 10px;
+	display: block;
+	transition: transform var(--transition-duration);
+}
+
+.layer {
+	width: 100%;
+	height: 0%;
+	background: linear-gradient(rgba(0, 0, 0, 0.6), var(--main-color));
+	border-radius: 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 40px;
+	text-align: center;
+	font-size: 16px;
+	transition: height var(--transition-duration);
+}
+
+.layer h3 {
+	font-weight: 500;
+	margin-bottom: 20px;
+	
+}
+
+.layer a {
+	margin-top: 20px;
+	color: var(--main-color);
+	text-decoration: none;
+	font-size: 18px;
+	line-height: 60px;
+	background: white;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.work:hover img {
+	transform: scale(1.1);
+}
+
+.work:hover .layer {
+	height: 100%;
+}
+
+/*-- Contact Form Section --*/
+.contact-left {
+	flex-basis: 35%;
+}
+
+.contact-right {
+	flex-basis: 60%;
+}
+
+.contact-left p {
+	margin-top: 30px;
+}
+
+.contact-left p i {
+	color: var(--main-color);
+	margin-right: 15px;
+	font-size: 25px;
+}
+
+.social-icons {
+	margin-top: 30px;
+}
+
+.social-icons a {
+	text-decoration: none;
+	font-size: 30px;
+	margin-right: 15px;
+	color: #ababab;
+	display: inline-block;
+	transition: transform var(--transition-duration);
+}
+
+.social-icons a:hover {
+	color: var(--main-color);
+	transform: translateY(-5px);
+}
+
+.btn {
+	display: inline-block;
+	margin: 50px auto;
+	width: fit-content;
+	border: 1px solid var(--main-color);
+	padding: 14px 50px;
+	border-radius: 6px;
+	text-decoration: none;
+	color: white;
+	background: var(--main-color);
+}
+
+.contact-right form {
+	width: 100%;
+}
+
+form input, form textarea {
+	width: 100%;
+	border: 0;
+	outline: none;
+	background: #262626;
+	padding: 15px;
+	margin: 15px 0;
+	color: white;
+	font-size: 18px;
+	border-radius: 6px;
+}
+
+form .btn {
+	padding: 14px 60px;
+	font-size: 18px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+/*-- Popup Message --*/
+#msg {
+	color: white;
+	font-size: 3em;
+	margin-top: -20px;
+	position: fixed; /* Position it relative to the viewport */
+	top: 50%; /* Center vertically */
+	left: 50%; /* Center horizontally */
+	transform: translate(-50%, -50%); /* Adjust to center */
+	padding: 20px; /* Padding around the text */
+	border-radius: 8px; /* Rounded corners */
+	z-index: 1000; /* Higher than other content */
+}
+
+/*-- CSS For Small Screens --*/
+nav .fa-solid {
+	display: none;
+}
+
+@media only screen and (max-width: 600px) {
+	header {
+		background-image: url(../images/phone-background.jpg);
+	}
+
+	.header-text {
+		margin-top: 110%;
+		font-size: 22px;
+        text-shadow: -1px -1px 0 #bebebe, 1px -1px 0 #bebebe, -1px 1px 0 #bebebe, 1px 1px 0 #bebebe;
+	}
+
+	.header-text h1 {
+		font-size: 32px;
+	}
+
+	.header-text span {
+		text-shadow: none;
+	}
+
+	nav .fa-solid {
+		display: block;
+		font-size: 25px;
+	}
+
+	nav ul {
+		background: var(--main-color);
+		position: fixed;
+		top: 0;
+		right: -200px;
+		width: 200px;
+		height: 100vh;
+		padding-top: 50px;
+		z-index: 2;
+		transition: right var(--transition-duration);
+	}
+
+	nav ul li {
+		display: block;
+		margin: 25px;
+	}
+
+	nav ul .fa-solid {
+		position: absolute;
+		top: 25px;
+		left: 25px;
+		cursor: pointer;
+	}
+
+	.sub-title {
+		font-size: 40px;
+	}
+
+	.about-col-1, .about-col-2 {
+		flex-basis: 100%;
+	}
+
+	.about-col-1 {
+		margin-bottom: 30px;
+	}
+
+	.about-col-2 {
+		font-size: 14px;
+	}
+
+	.tab-links {
+		font-size: 16px;
+		margin-right: 20px;
+	}
+
+	.contact-left, .contact-right {
+		flex-basis: 100%;
+	}
+
+	/* Prevent hover scaling effect on images in mobile view */
+	.work:hover img {
+		transform: none;
+	}
+
+	/* Disable layer hover expansion on mobile */
+	.layer {
+		height: 0;
+	}
+
+	.layer.active {
+		height: 100%;
+	}
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="6-Wheeled Autonomous Data Collection Robot">
+    <title>6-Wheeled Autonomous Data Collector</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            color: #00bfa5;
+        }
+
+        .hero {
+            background-image: url('assets/small_robot/images/robot_image.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            text-shadow: -1px -1px 0 #bebebe, 1px -1px 0 #bebebe, -1px 1px 0 #bebebe, 1px 1px 0 #bebebe;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            text-shadow: -1px -1px 0 #bebebe, 1px -1px 0 #bebebe, -1px 1px 0 #bebebe, 1px 1px 0 #bebebe;
+        }
+
+        .cta-btn {
+            background-color: #00bfa5;
+            padding: 10px 20px;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            background-color: #009a85;
+        }
+
+        .content {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .feature-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #00bfa5;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #009a85;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-item {
+                width: 80%;
+            }
+
+            .hero {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>RoBoot</h1>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#applications">Applications</a>
+            <a href="/pages/index.html">Back To Main Page</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Autonomous Robotics Meets Smart Data Collection!</h1>
+            <p>A powerful platform for testing reinforcement learning algorithms and data collection.</p>
+            <a href="#features" class="cta-btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="content">
+        <h2>Key Features</h2>
+        <div class="features">
+            <div class="feature-item">
+                <h3>6-Wheeled Mobility</h3>
+                <p>Capable of traversing tough terrains with continuous ground contact, ensuring stable navigation.</p>
+                <img src="assets/small_robot/images/mobility_image.jpg" alt="Robot Mobility">
+            </div>
+            <div class="feature-item">
+                <h3>Sensor Array</h3>
+                <p>Equipped with 4 distance sensors and light sensors to collect real-time data from the environment.</p>
+                <img src="assets/small_robot/images/sensors_image.jpg" alt="Sensors">
+            </div>
+            <div class="feature-item">
+                <h3>Easily Programmable</h3>
+                <p>Easy to program in C/C++ and MicroPython.</p>
+                <img src="assets/small_robot/images/programming.jpg" alt="Programming">
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="content">
+        <h2>How It Works</h2>
+        <p>This robot uses its sensor array to navigate, collect data, and transmit it to a connected computer for processing.</p>
+        <p>It's designed to be a flexible platform for testing reinforcement learning algorithms and autonomous decision-making processes.</p>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="content">
+        <h2>Applications</h2>
+        <p>This robot can be used in a variety of environments, from research labs to industrial or hazardous locations, providing valuable data collection and testing opportunities for autonomous systems.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>2022 6-Wheeled Autonomous Data Collector | <a href="mailto:info@roboticsproject.com">Contact Me</a></p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Multi-functional Robotics Project with 5-DOF Arm">
+    <title>Multi-functional Robotics Project</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            color: #00bfa5;
+        }
+
+        .hero {
+            background-image: url('assets/big-robot/images/robotic_arm.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            text-shadow: -1px -1px 0 #bebebe, 1px -1px 0 #bebebe, -1px 1px 0 #bebebe, 1px 1px 0 #bebebe;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            text-shadow: -1px -1px 0 #bebebe, 1px -1px 0 #bebebe, -1px 1px 0 #bebebe, 1px 1px 0 #bebebe;
+        }
+
+        .cta-btn {
+            background-color: #00bfa5;
+            padding: 10px 20px;
+            border: none;
+            color: white;
+            font-size: 1.2em;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+
+        .cta-btn:hover {
+            background-color: #009a85;
+        }
+
+        .content {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .feature-item {
+            width: 30%;
+            padding: 20px;
+            margin: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .feature-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #00bfa5;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #009a85;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-item {
+                width: 80%;
+            }
+
+            .hero {
+                height: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Multi-functional Robotics Project</h1>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#how-it-works">What is Inverse Kinematics?</a>
+            <a href="#applications">Applications</a>
+            <a href="/pages/index.html">Back To Main Page</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div>
+            <h1>Robotics Solutions for Real-world Challenges!</h1>
+            <p>A versatile robot with a 5-DOF arm, designed for exploration, search and rescue, and industrial tasks.</p>
+            <a href="#features" class="cta-btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="content">
+        <h2>Key Features</h2>
+        <div class="features">
+            <div class="feature-item">
+                <h3>Robotic Arm with Inverse Kinematics</h3>
+                <p>The 5-DOF arm is driven by inverse kinematics, enabling precise control and complex manipulations for a wide range of tasks.</p>
+                <img src="assets/big-robot/images/robotic_arm.jpg" alt="Robotic Arm">
+            </div>
+            <div class="feature-item">
+                <h3>Navigation on Difficult Terrain</h3>
+                <p>With a robust chassis, the robot can handle rugged terrains, making it suitable for critical field applications.</p>
+                <img src="assets/big-robot/images/terrain_navigation.jpg" alt="Terrain Navigation">
+            </div>
+            <div class="feature-item">
+                <h3>First-Person Vision Camera</h3>
+                <p>The onboard camera provides real-time visual feedback, essential for precision and remote monitoring.</p>
+                <img src="assets/big-robot/images/camera.jpg" alt="FPV Camera">
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="content">
+        <h2>What is Inverse Kinematics?</h2>
+        <p>Inverse Kinematics (IK) is a mathematical method used in robotics to determine the joint configurations needed to position the end-effector in a specific location and orientation in space.</p>
+        <p>This allows the robotic arm to interact precisely with its environment, making it essential for handling complex tasks.</p>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="content">
+        <h2>Applications</h2>
+        <p>This robot is designed for search and rescue missions, exploration in challenging environments, and industrial applications requiring precision and adaptability.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>2024 Multi-functional Robotics Project | <a href="mailto:wiktor271828@gmail.com">Contact Me</a></p>
+    </footer>
+
+</body>
+</html>

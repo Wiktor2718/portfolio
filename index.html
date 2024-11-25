@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Wiktor's personal portfolio</title>
+		<link rel="shortcut icon" type="image/x-icon" href="assets/main/images/icon.svg"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+		<link rel="stylesheet" href="assets/main/css/style.css">
+		<script src="https://kit.fontawesome.com/eb9ff2b523.js" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<!-- Header Section -->
+		<header>
+			<div class="container">
+				<nav>
+					<img src="assets/main/images/logo.png" class="logo">
+					<ul id="sidemenu">
+						<li><a href="#header">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#portfolio">Portfolio</a></li>
+						<li><a href="#contact">Contact</a></li>
+						<i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+					</ul>
+					<i class="fa-solid fa-bars" onclick="openmenu()"></i>
+				</nav>
+				<div class="header-text">
+					<p>Mathematics and AI Enthusiast</p>
+					<h1>Hi, I am <span>Wiktor Wilk</span></h1>
+				</div>
+			</div>
+		</header>
+
+		<!-- About Section -->
+		<div id="about">
+			<div class="container">
+				<div class="row">
+					<div class="about-col-1">
+						<img src="assets/main/images/me.jpg">
+					</div>
+					<div class="about-col-2">
+						<h1 class="sub-title">About me</h1>
+						<p>
+							Welcome to my portfolio! I am a passionate mathematics and AI enthusiast with a strong
+							foundation in robotics and programming. From a young age, I’ve been fascinated by building
+							robots, which led me to develop skills in both hardware and software. My projects range
+							from robotics systems incorporating inverse kinematics to advanced AI programming, where
+							I combine mathematical models with machine learning techniques.<br>
+							I have expertise in several programming languages, including CUDA, C, Rust, and Python,
+							allowing me to write efficient code for AI algorithms and robotic systems alike.
+							Whether it’s optimizing GPU performance or designing autonomous systems, I love
+							tackling complex problems and creating innovative solutions at the intersection of AI,
+							mathematics, and robotics.
+						</p>
+						<div class="tab-titles">
+							<p class="tab-links active-link" onclick="openTab(event, 'skills')">Skills</p>
+							<p class="tab-links" onclick="openTab(event, 'experience')">Experience</p>
+							<p class="tab-links" onclick="openTab(event, 'courses')">Courses</p>
+						</div>
+						<div class="tab-contents active-tab" id="skills">
+							<ul>
+								<li><span>Machine Learning</span><br>Applying machine learning algorithms</li>
+								<li><span>Robotics</span><br>Building robots with advanced mathematics</li>
+								<li><span>Programming</span><br>Software development</li>
+								<li><span>Languages</span><br>I am fluent in English and Polish</li>
+							</ul>
+						</div>
+						<div class="tab-contents" id="experience">
+							<ul>
+								<li><span>2021</span><br>I created a machine learning library in the C programming language</li>
+								<li><span>2022</span><br>I built a robot with arm</li>
+								<li><span>2022</span><br>I created a robotic platform for testing reinforcement learning algorithms</li>
+								<li><span>2023</span><br>I created a machine learning library in rust programming language</li>
+							</ul>
+						</div>
+						<div class="tab-contents" id="courses">
+							<ul>
+								<li><span>IA4Youth</span><br>Artificial inteligence certificate</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Portfolio Section -->
+		<div id="portfolio">
+			<div class="container">
+				<h1 class="sub-title">My work</h1>
+				<div class="work-list">
+					<div class="work">
+						<img src="assets/main/images/work-1.jpg">
+						<div class="layer mobile-toggle">
+							<h3>Robot with an arm</h3>
+							<p>
+								This robotic system employs inverse kinematics algorithms to achieve precise
+								arm positioning. It demonstrates versatile functionality, capable of transporting
+								various objects and navigating challenging terrains.
+							</p>
+							<a href="/pages/big-robot.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+					<div class="work">
+						<img src="assets/main/images/work-2.jpg">
+						<div class="layer mobile-toggle">
+							<h3>RoBoot</h3>
+							<p>
+								Meet RoBoot: a 3D-printed robot built for data collection and reinforcement learning tests.
+								Outfitted with ultrasonic and light sensors, it navigates uneven terrain on six wheels for
+								stable ground contact. Its modular design enables easy customization, making it ideal for
+								robotics research.
+							</p>
+							<a href="/pages/small-robot.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+					<div class="work">
+						<img src="assets/main/images/work-3-bottom.png">
+						<div class="layer mobile-toggle">
+							<h3>Matrix Flow</h3>
+							<p>
+								Matrix Flow is a simple machine learning library written in Rust and CUDA.
+								It provides an API for matrix manipulation and includes specially optimized neural networks.
+							</p>
+							<a href="/pages/matrix-flow.html"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Contact Form Section -->
+		<div id="contact">
+			<div class="container">
+				<div class="row">
+					<div class="contact-left">
+						<h1 class="subtitle">Contact Me</h1>
+						<p><i class="fa-solid fa-paper-plane"></i>wiktor271828@gmail.com</p>
+						<p><i class="fa-solid fa-square-phone"></i>+48889862256</p>
+						<div class="social-icons">
+							<!--<a href=""><i class="fa-brands fa-facebook"></i></a>-->
+							<a href="https://github.com/Wiktor2718/"><i class="fa-brands fa-github"></i></a>
+							<!--<a href=""><i class="fa-brands fa-x-twitter"></i></a>-->
+							<!--<a href=""><i class="fa-brands fa-instagram"></i></a>-->
+							<!--<a href=""><i class="fa-brands fa-linkedin"></i></a>-->
+						</div>
+						<!--<a href="download/my-cv.pdf" download class="btn">Download CV</a>-->
+					</div>
+					<div class="contact-right">
+						<form name="submit-to-google-sheet">
+							<input type="text" name="Name" placeholder="Your Name" required>
+							<input type="email" name="Email" placeholder="Your email" required>
+							<textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+							<button class="btn" type="submit">Submit</button>
+						</form>
+						<span id="msg"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="assets/main/scripts/mobile_toogle.js"></script>
+		<script src="assets/main/scripts/mobile_side_menu.js"></script>
+		<script src="assets/main/scripts/contact_form.js"></script>
+	</body>
+</html>
