@@ -1,16 +1,10 @@
 :root {
-	--main-color: #ff004f;
-	--faded-color: #b54769;
-	--transition-duration: 0.5s;
-}
-
-/* CUDA Colors
-:root {
 	--main-color: #00C5CD;
 	--faded-color: #008080;
+	--main-text-color: #000;
+	--sub-text-color: #222;
 	--transition-duration: 0.5s;
 }
-*/
 
 * {
 	margin: 0;
@@ -24,18 +18,8 @@ html {
 }
 
 body {
-	background: #080808;
-	color: white;
-}
-
-/*-- Header Section --*/
-header {
-	width: 100%;
-	height: 100vh;
-	background-image: url(../images/background.png);
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
+	background: white;
+	color: var(--sub-text-color);
 }
 
 .container {
@@ -45,12 +29,16 @@ header {
 nav {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	flex-wrap: wrap;
+	position: relative;
 }
 
-.logo {
-	width: 250px;
+nav .fa-solid.fa-bars {
+    position: absolute;
+    right: 40px;
+	top: 20px;
+    cursor: pointer;
 }
 
 nav ul li {
@@ -59,9 +47,8 @@ nav ul li {
 	margin: 10px 20px;
 }
 
-
 nav ul li a {
-	color: white;
+	color: var(--main-text-color);
 	text-decoration: none;
 	font-size: 18px;
 	position: relative;
@@ -82,24 +69,8 @@ nav ul li a:hover::after {
 	width: 100%;
 }
 
-.header-text{
-	margin-top: 20%;
-	font-size: 30px;
-}
-
-.header-text h1 {
-	font-size: 60px;
-	margin-top: 20px;
-}
-
-.header-text h1 span{
-	color: var(--main-color);
-}
-
-/*-- About Section --*/
 #about {
 	padding: 80px 0;
-	color: #ababab;
 }
 
 .row {
@@ -124,7 +95,7 @@ nav ul li a:hover::after {
 .sub-title {
 	font-size: 60px;
 	font-weight: 600;
-	color: white;
+	color: var(--main-text-color);
 }
 
 .tab-titles {
@@ -173,7 +144,6 @@ nav ul li a:hover::after {
 	display: block;
 }
 
-/*-- Portfolio Section --*/
 #portfolio {
 	padding: 50px 0;
 }
@@ -202,6 +172,7 @@ nav ul li a:hover::after {
 	width: 100%;
 	height: 0%;
 	background: linear-gradient(rgba(0, 0, 0, 0.6), var(--main-color));
+	color: #fff;
 	border-radius: 10px;
 	position: absolute;
 	left: 0;
@@ -220,7 +191,6 @@ nav ul li a:hover::after {
 .layer h3 {
 	font-weight: 500;
 	margin-bottom: 20px;
-	
 }
 
 .layer a {
@@ -244,7 +214,6 @@ nav ul li a:hover::after {
 	height: 100%;
 }
 
-/*-- Contact Form Section --*/
 .contact-left {
 	flex-basis: 35%;
 }
@@ -271,7 +240,7 @@ nav ul li a:hover::after {
 	text-decoration: none;
 	font-size: 30px;
 	margin-right: 15px;
-	color: #ababab;
+	color: var(--sub-text-color);
 	display: inline-block;
 	transition: transform var(--transition-duration);
 }
@@ -289,7 +258,7 @@ nav ul li a:hover::after {
 	padding: 14px 50px;
 	border-radius: 6px;
 	text-decoration: none;
-	color: white;
+	color: var(--main-text-color);
 	background: var(--main-color);
 }
 
@@ -301,59 +270,40 @@ form input, form textarea {
 	width: 100%;
 	border: 0;
 	outline: none;
-	background: #262626;
+	background: #eee;
 	padding: 15px;
 	margin: 15px 0;
-	color: white;
+	color: var(--main-text-color);
 	font-size: 18px;
 	border-radius: 6px;
 }
 
 form .btn {
+	color: #fff;
 	padding: 14px 60px;
 	font-size: 18px;
 	margin-top: 20px;
 	cursor: pointer;
 }
 
-/*-- Popup Message --*/
 #msg {
-	color: white;
+	color: var(--main-text-color);
 	font-size: 3em;
 	margin-top: -20px;
-	position: fixed; /* Position it relative to the viewport */
-	top: 50%; /* Center vertically */
-	left: 50%; /* Center horizontally */
-	transform: translate(-50%, -50%); /* Adjust to center */
-	padding: 20px; /* Padding around the text */
-	border-radius: 8px; /* Rounded corners */
-	z-index: 1000; /* Higher than other content */
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	border-radius: 8px;
+	z-index: 1000;
 }
 
-/*-- CSS For Small Screens --*/
 nav .fa-solid {
 	display: none;
 }
 
 @media only screen and (max-width: 600px) {
-	header {
-		background-image: url(../images/phone-background.jpg);
-	}
-
-	.header-text {
-		margin-top: 110%;
-		font-size: 22px;
-        text-shadow: -1px -1px 0 #bebebe, 1px -1px 0 #bebebe, -1px 1px 0 #bebebe, 1px 1px 0 #bebebe;
-	}
-
-	.header-text h1 {
-		font-size: 32px;
-	}
-
-	.header-text span {
-		text-shadow: none;
-	}
-
 	nav .fa-solid {
 		display: block;
 		font-size: 25px;
@@ -408,12 +358,10 @@ nav .fa-solid {
 		flex-basis: 100%;
 	}
 
-	/* Prevent hover scaling effect on images in mobile view */
 	.work:hover img {
 		transform: none;
 	}
 
-	/* Disable layer hover expansion on mobile */
 	.layer {
 		height: 0;
 	}
