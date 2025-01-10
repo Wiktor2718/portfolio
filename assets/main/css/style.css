@@ -364,6 +364,7 @@ nav .fa-solid {
 
 	.layer {
 		height: 0;
+		font-size: 14px;
 	}
 
 	.layer.active {
