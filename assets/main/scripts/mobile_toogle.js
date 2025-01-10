@@ -19,7 +19,12 @@ function toggleMobileLayer() {
                     });
 
                     // Toggle the clicked layer
-                    layer.classList.toggle('active');
+                    if (layer.classList.contains('active')) {
+                        layer.classList.remove('active');
+                    } else {
+                        layer.classList.add('active');
+                    }
+
                 }
             });
         }
